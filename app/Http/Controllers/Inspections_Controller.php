@@ -13,9 +13,18 @@ class Inspections_Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public $restful = true;
+
+    public function get_index()
     {
-        //
+        return View::make('inspections.index', array('insp_date'=>'2015-10-30'))
+            ->with('room_number','1654')
+            ->with('room_status', 'Vacant CLean')
+            ->with('clean_date', '2015-10-30')
+            ->with('manager', 'Zuleika Pinto')
+            ->with('supervisor', 'Isabel Molines')
+            ->with('gra', 'Valia');
     }
 
     /**
